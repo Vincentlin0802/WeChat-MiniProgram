@@ -1,0 +1,37 @@
+<!--pages/index/index.wxml-->
+<button bindtap='callButton'>请求位置权限</button>
+<button bindtap='callLocationAPI'>位置资讯</button>
+<button bindtap='callWeather'>查询天气</button>
+<button bindtap='callWeatherForecast'>天气预报</button>
+
+<!--把result列表渲染出來 , 底下的數值用for-item命名成itemName , 索引命名成 idx-->
+<view class = "info"wx:for="{{result}}" wx:for-item="itemName" wx:for-index="idx">
+<text class = "info_text">{{idx}}:{{itemName}}</text>
+</view>
+
+<view class = "info"wx:for="{{info}}" wx:for-item="itemName" wx:for-index="idx">
+<text class = "info_text">{{idx}}:{{itemName.name}}</text>
+</view>
+
+
+
+<view class = "info"wx:for="{{forecast}}" wx:for-item="itemName" wx:for-index="idx">
+<text class = "info_text">{{idx}}:{{itemName.casts.date}}</text>
+</view>
+
+<view class='table'>
+</view>
+<view class='tr'>
+  <view class='th'>天气</view>
+  <view class='th'>温度</view>
+  <view class='th'>风向</view>
+  <view class='th'>风力</view>       
+  <view class='th'>湿度</view>
+</view>
+<view class='tr'>
+<view class='td'><text>{{search.weather.data}}</text></view>
+<view class='td'><text>{{search.temperature.data}}</text></view>
+<view class='td'><text>{{search.winddirection.data}}</text></view>
+<view class='td'><text>{{search.windpower.data}}</text></view>       
+<view class='td'><text>{{search.humidity.data}}</text></view>
+</view>
